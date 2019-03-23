@@ -223,6 +223,23 @@ Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na ko
 
 \section{Instalacija i uputstvo za pokretanje na Linux/Windows operativnim sistemima}
 \label{sec:instalacija}
+Da bismo mogli da kompajliramo programe napisane u Objective-C, potrebno je prvo da instaliramo
+par paketa. Za kompajliranje Objective-C programa koristi se gcc kompajler, uz jos par
+dodataka.
+Prvo sto treba da uradimo je da instaliramo gcc podrsku za Objective-C.
+
+\begin{lstlisting}[frame=single]
+$ sudo apt-get install gobjc
+\end{lstlisting}
+
+Zatim treba da instaliramo framework na kom se moderni Objective-C zasniva i bez kog
+ne bi imalo puno smisla raditi (iako je moguce).
+Taj framework se zove GNUstep i instalira se komandom
+
+\begin{lstlisting}[frame=single]
+$ sudo apt-get install gnustep
+$ sudo apt-get install gnustep-devel
+\end{lstlisting}
 
 \section{Primer jednostavnog koda i njegovo objašnjenje}
 \label{sec:primer}
