@@ -242,6 +242,32 @@ $ sudo apt-get install gnustep
 $ sudo apt-get install gnustep-devel
 \end{lstlisting}
 
+\subsection{Kompajliranje}
+Svaki put kada pokrenemo novu sesiju, moramo da pokrenemo jedan skript, da bismo mogli da kompajliramo Objective-C programe.
+\begin{lstlisting}[frame=single]
+$ chmod +x /usr/share/GNUstep/Makefiles/GNUstep.sh
+$ /usr/share/GNUstep/Makefiles/GNUstep.sh
+\end{lstlisting}
+
+Da ne bismo svaki put morali da izvrsavamo GNUstep.sh, mozemo da uradimo sledece:
+
+\begin{lstlisting}[frame=single]
+$ echo /usr/share/GNUstep/Makefiles/GNUstep.sh >> ~/.bashrc
+\end{lstlisting}
+
+I na taj nacin, svaki put kad se pokrene nova sesija, bice izvrsen GNUstep.sh i necemo morati da brinemo.
+
+Kao sto smo vec naveli, Objective-C koristi GNU-ov C kompajler, uz dodatnu
+podrsku.
+Sem standardnih argumenata, gcc-u su potrebni i dodatni flagovi, kao sto su -lobjc, -lgnustep-base...
+
+Dakle ako zelimo da prevedmo hello.m program, moramo da izvrsimo sledece:
+\begin{lstlisting}[frame=single]
+$ gcc hello.m -o hello `gnustep-config --objc-flags` -lgnustep-base -lobjc
+\end{lstlisting}
+
+Izvrsavanje programa se radi normalno (kao i u C i u C++).
+
 \section{Primer jednostavnog koda i njegovo objašnjenje}
 \label{sec:primer}
 
