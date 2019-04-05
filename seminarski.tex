@@ -214,9 +214,33 @@ Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na ko
 
 \section{Osnovna namena programskog jezika, svrha i mogućnosti}
 \label{sec:namena}
+Krajem 80-ih godina proslog veka, popularnost Objective-C jezika je rasla sa razvojem NeXT sistema. Najvise se koristi za razvoj softvera za Apple iOS operativni sistem. Uticaj Objective-C jezika je vidljiv u Java programskom jeziku.
+Objective-C definise mali ali mocan skup ekstenzija ANSI C programskog jezika koje omogucavaju objektno orijentisano programiranje. Cocoa, Apple-ov API za macOS je napisan uz pomoc Objective-C jezika, takodje veliki deo aplikacija je napisan koristeci taj jezik. 
 
 \section{Osnovne osobine ovog programskog jezika, podržane paradigme i koncepti}
 \label{sec:osobine}
+Objective-C je nadskup C programskog jezika koji pruza objektno orijentisane sposobnosti i dinamicko izvrsno okruzenje (eng.~{\em runtime}). Objective-C nasledjuje sintaksu, primitivne tipove, i naredbe za tok izvrsvanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda. Takodje omogucava dinamicko tipiziranje i povezivanje.
+\subsection{Osnovni koncepti}
+\subsubsection{Klasteri klasa}
+Klasteri klasa (eng.~{\em class clusters}) su programski sablon koji se cesto koristi u pisanju programa na Objective-C jeziku. Klasteri klasa grupisu odredjeni broj privatnih podklasa unutar javne apstraktne nadklase. 
+Ovakvo grupisanje pojednostavljuje javno vidljivu arhitekturu objektno orijentisanih biblioteka i radnih okvira, bez smanjenja njihove funkcionalnosti. Apstraktna nadklasa mora da deklarise metode za kreiranje instanci svojih privatnih podklasa. 
+\subsubsection{Introspekcija}
+Introspekcija je mocno svojstvo objektno orijentisanih jezika i okruzenja. Ono predstavlja mogucnost objekta da predstavi detalje o sopstvenoj implementaciji u toku izvrsavanja programa. Ti detalji mogu biti njegovo mesto u drvetu nasledjivanja, da li implementira odredjeni protokol, i da li odgovara na neku poruku. Primer: 
+\begin{lstlisting}[frame=single]
+while ( id anObject = [objectEnumerator nextObject] ) {
+    if ( [self class] == [anObject superclass] ) {
+        // do something appropriate...
+    }
+}
+\end{lstlisting}
+\subsubsection{Alokacija Objekata}
+Prilikom alokacije objekata, dodeljuje se zahtevana memorija iz regiona virtualne memorije dostupne programu. Da bi se izracunalo koliko memorije treba alocirati, uzimaju se u obzir instancirane promenjlive tog objekta - ukljucujuci njihove tipove i redosled - kao sto je navedeno u klasi objekta.
+
+\subsubsection{MVC}
+MVC (eng.~{\em Model-View-Controller}) programski sablon je sablon visokog nivoa koji predstavlja globalnu arhitekturu aplikacije i razvrstava objekte prema ulozi koju imaju u toj aplikaciji.
+Objektno orijentisano programiranje ima vise koristi od ovog modela; povecava se modularnost koriscenih objekata, njihovi interfejsi su bolje definisani. Sami programi se bolje adaptiraju promeni zahteva.
+MVC smatra da postoje tri vrste objekata: model, pogled, i kontroler objekti. MVC sablon definise uloge koji ovi objekti imaju u aplikaciji i nacin na koji komuniciraju. Pri dizajniranju aplikacije, veliki korak je biranje - ili pravljenje - klasa za objekte koji pripadaju jednoj od ovih uloga. 
+\includegraphics{traditional_mvc}
 
 \section{Najpoznatija okruženja (framework) za korišćenje ovog jezika i njihove karakteristike}
 \label{sec:okruzenja}
