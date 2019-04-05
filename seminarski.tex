@@ -202,7 +202,7 @@ except ValueError:
 
 \subsection{Nastanak i istorijski razvoj}
 \label{subsec:istorija}
-Iako se pojam jezika Objective-C primarno vezuje za proizvode kompanije Epl (engl. Apple) -- MAC OS X, iPhone itd, on je zapravo nastao mnogo pre njih. Njegove temelje postavili su Bred Koks i Tom Lav 1981. godine, težeći da nađu način za povećavanje produktivnosti programera. Te godine pojavio se novi, revolucionarni jezik Smalltalk, koji je tada unapredio koncept objektno-orijentisanog programiranja. U osnovi tog jezika bilo je posmatranje programa kao skupova objekata koji su mogli da komuniciraju jedni sa drugima dinamički pozivajući metode. To je omogućilo da se stanje programa menja pod uticajem korisnika. Koks je u ovoj idej video mogućnost da se vrtoglavo ubrza pisanje programa, pošto su se u njemu mogle praviti biblioteke objekata i posle koristiti u drugim programima bez izmene. Međutim, Smalltalk je bio veoma spor i zahtevao je da se svi programi pišu i pokreću u posebnom okruženju. Tada se javila potreba za spajanjem objektno-orijentisanih ideja Smalltalk-a i brzog jezika C. Koks je 1983. objavio naučni rad u kom je predstavio objektno-orijentisani prekompilator (engl. Object-Oriented Precompiler). Da bi ovu svoju ideju izbacili na tržište, njih dvojica su osnovali kompaniju Stepstoun (engl. Stepstone), izmenili kompilator za OOPC i preimenovali jezik u Objective-C. Iako je glavna ideja ovog projekta bila pisanje i prodavanje pomenutih biblioteka koje su mogle ponovo da se koriste, korisnici su imali dosta zamerki, te je jezik sve više poprimao karakteristike objektno-orijentisanih jezika kakve ih danas znamo, kao što su sakupljač otpada i interpreter, te je kompanija uskoro propala. Stiv Džobs je 1988. kupio licencu, a nekoliko godina kasnije i sva prava za Objective-C za potrebe svoje kompanije NeXT Computer koja se  1996. pripojila Apple-u. Sa tom tranzicijom, sam jezik je pretrpeo razne promene, a najvažnije su uvođenje dveju novih ,,komponenti": kategorija (engl. categories), danas poznatih kao ekstenzije (engl. extensions) i protokola (engl. protocols). Kategorije su služile da programerima omoguće da sami dodaju funkcije u objekte iz već postojećih biblioteka, a protokoli su omogućavali objektima da komunuciraju jedni s drugima. Oni su danas podržani u jeziku Java i poznati su nam kao interfejsi (engl. interfaces). 
+Iako se pojam jezika Objective-C primarno vezuje za proizvode kompanije Epl (engl. Apple) -- MAC OS X, iPhone itd, on je zapravo nastao mnogo pre njih. Njegove temelje postavili su Bred Koks i Tom Lav 1981. godine, težeći da nađu način za povećavanje produktivnosti programera. Te godine pojavio se novi, revolucionarni jezik Smalltalk, koji je tada unapredio koncept objektno-orijentisanog programiranja. U osnovi tog jezika bilo je posmatranje programa kao skupova objekata koji su mogli da komuniciraju jedni sa drugima dinamički pozivajući metode. To je omogućilo da se stanje programa menja pod uticajem korisnika. Koks je u ovoj ideji video mogućnost da se vrtoglavo ubrza pisanje programa, pošto su se u njemu mogle praviti biblioteke objekata i posle koristiti u drugim programima bez izmene. Međutim, Smalltalk je bio veoma spor i zahtevao je da se svi programi pišu i pokreću u posebnom okruženju. Tada se javila potreba za spajanjem objektno-orijentisanih ideja Smalltalk-a i brzog jezika C. Koks je 1983. objavio naučni rad u kom je predstavio objektno-orijentisani prekompilator (eng.~{\em Object-Oriented Precompiler}). Da bi ovu svoju ideju izbacili na tržište, njih dvojica su osnovali kompaniju Stepstoun (eng.~{\em Stepstone}), izmenili kompilator za OOPC i preimenovali jezik u Objective-C. Iako je glavna ideja ovog projekta bila pisanje i prodavanje pomenutih biblioteka koje su mogle ponovo da se koriste, korisnici su imali dosta zamerki, te je jezik sve više poprimao karakteristike objektno-orijentisanih jezika kakve ih danas znamo, kao što su sakupljač otpada i interpreter, te je kompanija uskoro propala. Stiv Džobs je 1988. kupio licencu, a nekoliko godina kasnije i sva prava za Objective-C za potrebe svoje kompanije NeXT Computer koja se  1996. pripojila Apple-u. Sa tom tranzicijom, sam jezik je pretrpeo razne promene, a najvažnije su uvođenje dveju novih ,,komponenti": kategorija (eng.~{\em categories}), danas poznatih kao ekstenzije (eng.~{\em extensions}) i protokola (eng.~{\em protocols}). Kategorije su služile da programerima omoguće da sami dodaju funkcije u objekte iz već postojećih biblioteka, a protokoli su omogućavali objektima da komunuciraju jedni s drugima. Oni su danas podržani u jeziku Java i poznati su nam kao interfejsi (eng.~{\em interfaces}). 
 
 \subsection{Mesto u razvojnom stablu}
 \label{subsec:stablo}
@@ -214,18 +214,18 @@ Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na ko
 
 \section{Osnovna namena programskog jezika, svrha i mogućnosti}
 \label{sec:namena}
-Krajem 80-ih godina proslog veka, popularnost Objective-C jezika je rasla sa razvojem NeXT sistema. Najvise se koristi za razvoj softvera za Apple iOS operativni sistem. Uticaj Objective-C jezika je vidljiv u Java programskom jeziku.
-Objective-C definise mali ali mocan skup ekstenzija ANSI C programskog jezika koje omogucavaju objektno orijentisano programiranje. Cocoa, Apple-ov API za macOS je napisan uz pomoc Objective-C jezika, takodje veliki deo aplikacija je napisan koristeci taj jezik. 
+Krajem 80-ih godina prošlog veka, popularnost Objective-C jezika je rasla sa razvojem NeXT sistema. Najviše se koristi za razvoj softvera za Apple iOS operativni sistem. Uticaj Objective-C jezika je vidljiv u Java programskom jeziku.
+Objective-C definiše mali ali moćan skup ekstenzija ANSI C programskog jezika koje omogućavaju objektno orijentisano programiranje. Cocoa, Apple-ov API za macOS je napisan uz pomoć Objective-C jezika, takodje veliki deo aplikacija je napisan koristeći taj jezik. 
 
 \section{Osnovne osobine ovog programskog jezika, podržane paradigme i koncepti}
 \label{sec:osobine}
-Objective-C je nadskup C programskog jezika koji pruza objektno orijentisane sposobnosti i dinamicko izvrsno okruzenje (eng.~{\em runtime}). Objective-C nasledjuje sintaksu, primitivne tipove, i naredbe za tok izvrsvanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda. Takodje omogucava dinamicko tipiziranje i povezivanje.
+Objective-C je nadskup C programskog jezika koji pruža objektno orijentisane sposobnosti i dinamičko izvršno okruzenje (eng.~{\em runtime}). Objective-C nasledjuje sintaksu, primitivne tipove i naredbe za tok izvršvanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda. Takodje omogućava dinamičko tipiziranje i povezivanje.
 \subsection{Osnovni koncepti}
 \subsubsection{Klasteri klasa}
-Klasteri klasa (eng.~{\em class clusters}) su programski sablon koji se cesto koristi u pisanju programa na Objective-C jeziku. Klasteri klasa grupisu odredjeni broj privatnih podklasa unutar javne apstraktne nadklase. 
-Ovakvo grupisanje pojednostavljuje javno vidljivu arhitekturu objektno orijentisanih biblioteka i radnih okvira, bez smanjenja njihove funkcionalnosti. Apstraktna nadklasa mora da deklarise metode za kreiranje instanci svojih privatnih podklasa. 
+Klasteri klasa (eng.~{\em class clusters}) su programskišsablon koji se često koristi u pisanju programa na Objective-C jeziku. Klasteri klasa grupišu odredjeni broj privatnih podklasa unutar javne apstraktne nadklase. 
+Ovakvo grupisanje pojednostavljuje javno vidljivu arhitekturu objektno orijentisanih biblioteka i radnih okvira, bez smanjenja njihove funkcionalnosti. Apstraktna nadklasa mora da deklariše metode za kreiranje instanci svojih privatnih podklasa. 
 \subsubsection{Introspekcija}
-Introspekcija je mocno svojstvo objektno orijentisanih jezika i okruzenja. Ono predstavlja mogucnost objekta da predstavi detalje o sopstvenoj implementaciji u toku izvrsavanja programa. Ti detalji mogu biti njegovo mesto u drvetu nasledjivanja, da li implementira odredjeni protokol, i da li odgovara na neku poruku. Primer: 
+Introspekcija je mocno svojstvo objektno orijentisanih jezika i okruzenja. Ono predstavlja mogucnost objekta da predstavi detalje o sopstvenoj implementaciji u toku izvršavanja programa. Ti detalji mogu biti njegovo mesto u drvetu nasledjivanja, da li implementira odredjeni protokol i da li odgovara na neku poruku. Primer: 
 \begin{lstlisting}[frame=single]
 while ( id anObject = [objectEnumerator nextObject] ) {
     if ( [self class] == [anObject superclass] ) {
@@ -234,13 +234,13 @@ while ( id anObject = [objectEnumerator nextObject] ) {
 }
 \end{lstlisting}
 \subsubsection{Alokacija Objekata}
-Prilikom alokacije objekata, dodeljuje se zahtevana memorija iz regiona virtualne memorije dostupne programu. Da bi se izracunalo koliko memorije treba alocirati, uzimaju se u obzir instancirane promenjlive tog objekta - ukljucujuci njihove tipove i redosled - kao sto je navedeno u klasi objekta.
+Prilikom alokacije objekata, dodeljuje se zahtevana memorija iz regiona virtualne memorije dostupne programu. Da bi se izračunalo koliko memorije treba alocirati, uzimaju se u obzir instancirane promenjlive tog objekta - uključujući njihove tipove i redosled - kao sto je navedeno u klasi objekta.
 
 \subsubsection{MVC}
-MVC (eng.~{\em Model-View-Controller}) programski sablon je sablon visokog nivoa koji predstavlja globalnu arhitekturu aplikacije i razvrstava objekte prema ulozi koju imaju u toj aplikaciji.
-Objektno orijentisano programiranje ima vise koristi od ovog modela; povecava se modularnost koriscenih objekata, njihovi interfejsi su bolje definisani. Sami programi se bolje adaptiraju promeni zahteva.
-MVC smatra da postoje tri vrste objekata: model, pogled, i kontroler objekti. MVC sablon definise uloge koji ovi objekti imaju u aplikaciji i nacin na koji komuniciraju. Pri dizajniranju aplikacije, veliki korak je biranje - ili pravljenje - klasa za objekte koji pripadaju jednoj od ovih uloga. 
-\includegraphics{traditional_mvc}
+MVC (eng.~{\em Model-View-Controller}) programski šablon je šablon visokog nivoa koji predstavlja globalnu arhitekturu aplikacije i razvrstava objekte prema ulozi koju imaju u toj aplikaciji.
+Objektno orijentisano programiranje ima više koristi od ovog modela; povećava se modularnost korišćenih objekata, njihovi interfejsi su bolje definisani. Sami programi se bolje adaptiraju promeni zahteva.
+MVC smatra da postoje tri vrste objekata: model, pogled, i kontroler objekti. MVC šablon definiše uloge koji ovi objekti imaju u aplikaciji i način na koji komuniciraju. Pri dizajniranju aplikacije, veliki korak je biranje - ili pravljenje - klasa za objekte koji pripadaju jednoj od ovih uloga. 
+%\includegraphics{traditional_mvc}
 
 \section{Najpoznatija okruženja (framework) za korišćenje ovog jezika i njihove karakteristike}
 \label{sec:okruzenja}
@@ -249,17 +249,17 @@ MVC smatra da postoje tri vrste objekata: model, pogled, i kontroler objekti. MV
 \label{sec:instalacija}
 \subsection{Instalacija neophodnih paketa}
 Da bismo mogli da kompajliramo programe napisane u Objective-C, potrebno je prvo da instaliramo
-par paketa. Za kompajliranje Objective-C programa koristi se gcc kompajler, uz jos par
+par paketa. Za kompajliranje Objective-C programa koristi se gcc kompajler{\cite{gcc}, uz jos par
 dodataka.
-Prvo sto treba da uradimo je da instaliramo gcc podrsku za Objective-C.
+Prvo što treba da uradimo je da instaliramo gcc podršku za Objective-C.
 
 \begin{lstlisting}[frame=single]
 $ sudo apt-get install gobjc
 \end{lstlisting}
 
-Zatim treba da instaliramo framework na kom se moderni Objective-C zasniva i bez kog
-ne bi imalo puno smisla raditi (iako je moguce).
-Taj framework se zove GNUstep i instalira se komandom
+Zatim treba da instaliramo radno okruženje (eng.~{\em framework}) na kom se moderni Objective-C zasniva i bez kog
+ne bi imalo puno smisla raditi (iako je moguće).
+To okruženje se zove GNUstep i instalira se komandom
 
 \begin{lstlisting}[frame=single]
 $ sudo apt-get install gnustep
@@ -273,24 +273,27 @@ $ chmod +x /usr/share/GNUstep/Makefiles/GNUstep.sh
 $ /usr/share/GNUstep/Makefiles/GNUstep.sh
 \end{lstlisting}
 
-Da ne bismo svaki put morali da izvrsavamo GNUstep.sh, mozemo da uradimo sledece:
+Da ne bismo svaki put morali da izvršavamo GNUstep.sh, možemo da uradimo sledeće:
 
 \begin{lstlisting}[frame=single]
 $ echo /usr/share/GNUstep/Makefiles/GNUstep.sh >> ~/.bashrc
 \end{lstlisting}
 
-I na taj nacin, svaki put kad se pokrene nova sesija, bice izvrsen GNUstep.sh i necemo morati da brinemo.
+I na taj način, svaki put kad se pokrene nova sesija, bice izvršen GNUstep.sh i nećemo morati da brinemo.
 
-Kao sto smo vec naveli, Objective-C koristi GNU-ov C kompajler, uz dodatnu
-podrsku.
-Sem standardnih argumenata, gcc-u su potrebni i dodatni flagovi, kao sto su -lobjc, -lgnustep-base...
+Kao što smo već naveli, Objective-C koristi GNU-ov C kompajler, uz dodatnu
+podršku.
+Sem standardnih argumenata, gcc-u su potrebni i dodatni argumenti (eng.~{\em flags}), kao što su -lobjc, -lgnustep-base...
 
-Dakle ako zelimo da prevedmo hello.m program, moramo da izvrsimo sledece:
+Dakle ako želimo da prevedemo hello.m program, moramo da izvršimo sledeće:
 \begin{lstlisting}[frame=single]
 $ gcc hello.m -o hello `gnustep-config --objc-flags` -lgnustep-base -lobjc
 \end{lstlisting}
 
-Izvrsavanje programa se radi normalno (kao i u C i u C++).
+Izvršavanje programa se radi uobičajeno:
+\begin{lstlisting}[frame=single]
+$ ./hello
+\end{lstlisting}
 
 \section{Primer jednostavnog koda i njegovo objašnjenje}
 \label{sec:primer}
