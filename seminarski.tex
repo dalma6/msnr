@@ -179,7 +179,8 @@ Korisničko okruženje Etoile \cite{etoile} koje je moguće koristiti na različ
   
 \section{Instalacija i uputstvo za pokretanje na Linux/Windows operativnim sistemima}
 \label{sec:instalacija}
-\subsection{Instalacija neophodnih paketa}
+\subsection{Instalacija na Linux operativnim sistemima}
+\subsubsection{Instalacija neophodnih paketa}
 Da bismo mogli da kompajliramo programe napisane u Objective-C, potrebno je prvo da instaliramo
 par paketa. Za kompajliranje Objective-C programa koristi se GCC kompajler{\cite{gcc}, uz još par
 dodataka.
@@ -197,7 +198,7 @@ $ sudo apt-get install gnustep
 $ sudo apt-get install gnustep-devel
 \end{lstlisting}
 
-\subsection{Kompajliranje}
+\subsubsection{Kompajliranje}
 Svaki put kada pokrenemo novu sesiju, moramo da pokrenemo skript GNUstep.sh, da bismo mogli da kompajliramo Objective-C programe.
 \begin{lstlisting}[frame=single]
 $ chmod +x /usr/share/GNUstep/Makefiles/GNUstep.sh
@@ -224,6 +225,20 @@ $ gcc hello.m -o hello `gnustep-config --objc-flags` -lgnustep-base -lobjc
 Izvršavanje programa se radi uobičajeno:
 \begin{lstlisting}[frame=single]
 $ ./hello
+\end{lstlisting}
+
+\subsection{Instalacija na Windows operativnim sistemima}
+\subsubsection{Kompajliranje i izvršavanje}
+Kada smo instalirali MinGW i GNUstep, možemo da kompajliramo i izvršavamo Objective-C programe u shell okruženju, koje pokrećemo tako što otvorimo Shell program koji se nalazi u GNUstep.
+Inicijalno se nalazimo u C:\\GNUstep\\home\\<username> direktorijumu.
+Program ćemo kompajlirati sledećom naredbom:
+\begin{lstlisting}[frame=single]
+$ gcc `gnustep-config --objc-flags` -L /GNUstep/System/Library/Libraries hello.m -o hello -lgnustep-base -lobjc
+\end{lstlisting}
+
+A izvršavanje sa:
+\begin{lstlisting}[frame=single]
+./hello.exe
 \end{lstlisting}
 
 \section{Primer jednostavnog koda i njegovo objašnjenje}
