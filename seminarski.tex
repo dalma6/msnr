@@ -55,7 +55,7 @@
 
 \title{Programski jezik Objective-C\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
-\author{Dalma Beara, Denis Aličić, Mateja Marjanović, Anja Miletić\\ kontakt email prvog, drugog, trećeg, četvrtog autora}
+\author{Dalma Beara, Denis Aličić, Mateja Marjanović, Anja Miletić\\ kontakt email prvog, a.denis96@gmail.com, trećeg, četvrtog autora}
 
 %\date{9.~april 2015.}
 
@@ -83,20 +83,7 @@ Vaš seminarski rad mora da sadrži najmanje jednu \textbf{sliku}, najmanje jedn
 
 Slike i tabele treba da budu u svom okruženju, sa odgovarajućim naslovima, obeležene labelom da koje omogućava referenciranje. 
 
-\begin{primer} Ovako se ubacuje slika. Obratiti pažnju da je dodato i 
-\begin{verbatim}
-\usepackage{graphicx}
-\end{verbatim}
-
-\begin{figure}[h!]
-\begin{center}
-\end{center}
-\caption{Pande}
-\label{fig:pande}
-\end{figure}
-
 Na svaku sliku neophodno je referisati se negde u tekstu. Na primer, na slici \ref{fig:pande} prikazane su pande. 
-\end{primer}
 
 \begin{primer} I tabele treba da budu u svom okruženju, i na njih je neophodno referisati se u tekstu. Na primer, u tabeli \ref{tab:tabela1} su prikazana različita poravnanja u tabelama.
 
@@ -119,15 +106,19 @@ d &e&f\\ \hline
 
 \subsection{Nastanak i istorijski razvoj}
 \label{subsec:istorija}
-Iako se pojam jezika Objective-C primarno vezuje za proizvode kompanije Epl (engl. Apple) -- MAC OS X, iPhone itd, on je zapravo nastao mnogo pre njih. Njegove temelje postavili su Bred Koks i Tom Lav 1981. godine, težeći da nađu način za povećavanje produktivnosti programera. Te godine pojavio se novi, revolucionarni jezik Smalltalk \cite{smalltalk}, koji je tada unapredio koncept objektno-orijentisanog programiranja. U osnovi tog jezika bilo je posmatranje programa kao skupova objekata koji su mogli da komuniciraju jedni sa drugima dinamički pozivajući metode. To je omogućilo da se stanje programa menja pod uticajem korisnika. Koks je u ovoj ideji video mogućnost da se vrtoglavo ubrza pisanje programa, pošto su se u njemu mogle praviti biblioteke objekata i posle koristiti u drugim programima bez izmene. Međutim, Smalltalk je bio veoma spor i zahtevao je da se svi programi pišu i pokreću u posebnom okruženju. Tada se javila potreba za spajanjem objektno-orijentisanih ideja Smalltalk-a i brzog jezika C. Koks je 1983. objavio naučni rad u kom je predstavio objektno-orijentisani prekompilator (eng.~{\em Object-Oriented Precompiler}). Da bi ovu svoju ideju izbacili na tržište, njih dvojica su osnovali kompaniju Stepstoun (eng.~{\em Stepstone}), izmenili kompilator za OOPC i preimenovali jezik u Objective-C. Iako je glavna ideja ovog projekta bila pisanje i prodavanje pomenutih biblioteka koje su mogle ponovo da se koriste, korisnici su imali dosta zamerki, te je jezik sve više poprimao karakteristike objektno-orijentisanih jezika kakve ih danas znamo, kao što su sakupljač otpada i interpreter, te je kompanija uskoro propala. Stiv Džobs je 1988. kupio licencu, a nekoliko godina kasnije i sva prava za Objective-C za potrebe svoje kompanije NeXT Computer koja se  1996. pripojila Apple-u. Sa tom tranzicijom, sam jezik je pretrpeo razne promene, a najvažnije su uvođenje dveju novih ,,komponenti": kategorija (eng.~{\em categories}), danas poznatih kao ekstenzije (eng.~{\em extensions}) i protokola (eng.~{\em protocols}). Kategorije su služile da programerima omoguće da sami dodaju funkcije u objekte iz već postojećih biblioteka, a protokoli su omogućavali objektima da komunuciraju jedni s drugima. Oni su danas podržani u jeziku Java i poznati su nam kao interfejsi (eng.~{\em interfaces}). 
+Iako se pojam jezika Objective-C primarno vezuje za proizvode kompanije Epl (engl. Apple) -- MAC OS X, iPhone itd, on je zapravo nastao mnogo pre njih. Njegove temelje postavili su Bred Koks i Tom Lav 1981. godine, težeći da nađu način za povećavanje produktivnosti programera. Te godine pojavio se novi, revolucionarni jezik Smalltalk \cite{smalltalk}, koji je tada unapredio koncept objektno-orijentisanog programiranja. U osnovi tog jezika bilo je posmatranje programa kao skupova objekata koji su mogli da komuniciraju jedni sa drugima dinamički pozivajući metode. To je omogućilo da se stanje programa menja pod uticajem korisnika. Koks je u ovoj ideji video mogućnost da se vrtoglavo ubrza pisanje programa, pošto su se u njemu mogle praviti biblioteke objekata i posle koristiti u drugim programima bez izmene. Međutim, Smalltalk je bio veoma spor i zahtevao je da se svi programi pišu i pokreću u posebnom okruženju. Tada se javila potreba za spajanjem objektno-orijentisanih ideja Smalltalk-a i brzog jezika C. Koks je 1983. objavio naučni rad u kom je predstavio objektno-orijentisani prekompilator (eng.~{\em Object-Oriented Precompiler}). Da bi ovu svoju ideju izbacili na tržište, njih dvojica su osnovali kompaniju Stepstoun (eng.~{\em Stepstone}), izmenili kompilator za OOPC i preimenovali jezik u Objective-C. Iako je glavna ideja ovog projekta bila pisanje i prodavanje pomenutih biblioteka koje su mogle ponovo da se koriste, korisnici su imali dosta zamerki, te je jezik sve više poprimao karakteristike objektno-orijentisanih jezika kakve ih danas znamo, kao što su sakupljač otpada (eng.~{\em garbage collector}) i interpreter, te je kompanija uskoro propala. Stiv Džobs je 1988. kupio licencu, a nekoliko godina kasnije i sva prava za Objective-C za potrebe svoje kompanije NeXT Computer koja se  1996. pripojila Apple-u. Sa tom tranzicijom, sam jezik je pretrpeo razne promene, a najvažnije su uvođenje dveju novih ,,komponenti'': kategorija (eng.~{\em categories}), danas poznatih kao ekstenzije (eng.~{\em extensions}) i protokola (eng.~{\em protocols}). Kategorije su služile da programerima omoguće da sami dodaju funkcije u objekte iz već postojećih biblioteka, a protokoli su omogućavali objektima da komuniciraju jedni s drugima. Oni su danas podržani u jeziku Java i poznati su kao interfejsi (eng.~{\em interfaces}). 
 
-\subsection{Mesto u razvojnom stablu}
-\label{subsec:stablo}
-
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.4]{razvojno_stablo.pdf}
+	\caption{Razvojno stablo}	
+	\label{fig:Razvojno_stablo}
+	\end{center}
+\end{figure}
 
 \subsection{Uticaj drugih programskih jezika}
 \label{subsec:uticaj}
-Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na kojima počiva Smalltalk utočenih u sintaksu jezika C. Isprva je čak funkcionisao tako što je kod prevođen na C i onda izvršavan. S druge strane, on je uticao na jezik Swift koji je razvio Epl. Swift se često naziva i ,,Objective-C bez C-a". 
+Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na kojima počiva Smalltalk utočenih u sintaksu jezika C. Isprva je čak funkcionisao tako što je kod prevođen na C i onda izvršavan. S druge strane, on je uticao na jezik Swift koji je razvio Epl. Swift \cite{swift} se često naziva i ,,Objective-C bez C-a'' kao i na Javu \ref{fig:Razvojno_stablo}. 
 
 \section{Osnovna namena programskog jezika, svrha i mogućnosti}
 \label{sec:namena}
@@ -215,7 +206,7 @@ $ ./hello
 \section{Primer jednostavnog koda i njegovo objašnjenje}
 \label{sec:primer}
 
-Zatim, navedimo primer zastarelog (od verzije MAC 10.5), ali zanimljivog koda koji omogućava ,,imitiranje" (eng.~{\em posing}). 
+Zatim, navedimo primer zastarelog (od verzije MAC 10.5), ali zanimljivog koda koji omogućava ,,imitiranje'' (eng.~{\em posing}). 
 
 \begin{lstlisting}[frame=single]
 #import <Foundation/Foundation.h>
