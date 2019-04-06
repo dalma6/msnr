@@ -62,21 +62,18 @@
 \maketitle
 
 \abstract{
-U ovom tekstu je ukratko prikazana osnovna forma seminarskog rada. Obratite pažnju da je pored ove .pdf datoteke, u prilogu i odgovarajuća .tex datoteka, kao i .bib datoteka korišćena za generisanje literature. Na prvoj strani seminarskog rada su naslov, apstrakt i sadržaj, i to sve mora da stane na prvu stranu! Kako bi Vaš seminarski zadovoljio standarde i očekivanja, koristite uputstva i materijale sa predavanja na temu pisanja seminarskih radova. Ovo je samo šablon koji se odnosi na fizički izgled seminarskog rada (šablon koji \emph{morate} da ispoštujete!) kao i par tehničkih pomoćnih uputstava. Pročitajte tekst pažljivo jer on sadrži i važne informacije vezane za zahteve obima i karakteristika seminarskog rada.}
+U ovom radu je opisan nastanak i razvoj programskog jezika Objective-C, kao i njegova uloga u razvoju drugih jezika koji imaju široku primenu(Java, Swift) kao i bitnih koncepata koji su počevši od Objective-C ušli u upotrebu (interfejsi). Predstavljene su osnovne karakteristike jezika i najbitniji koncepti koje jezik, na kom je zasnovan operativni sistem MAC OS, implementira kao i najpoznatija razvojna okruženja (eng.~{\em framework}).   
 
+\setcounter{tocdepth}{1}
 \tableofcontents
 
 \newpage
 
 \section{Uvod}
 \label{sec:uvod}
+Objective-C je objektno-orijentisan programski jezik namenjen kako za sistemsko programiranje, tako i za izradu korisničkih aplikacija. Nastao iz potrebe za većom produktivnosti programera.
+Kroz naredna poglavlja biće predstavljen uticaj jezika na svet kakav danas poznajemo kao i primeri u kojima je korišćen Objective-C za implementaciju čitavih operativnih sistema i korisničkih okruženja.  
 
-Kada budete predavali seminarski rad, imenujete datoteke tako da sadrže redni broj teme, temu seminarskog rada, kao i prezimena članova grupe. Precizna uputstva na temu imenovnja će biti data na formi za predaju seminarskog rada. Predaja seminarskih radova biće isključivo preko veb forme, a NE slanjem mejla. Link na formu će biti dat u okviru obaveštenja na strani kursa. Vodite računa da prilikom predavanja seminarskog rada predate samo one fajlove koji su neophodni za ponovno generisanje pdf datoteke. To znači da pomoćne fajlove, kao što su .log, .out, .blg, .toc, .aux i slično, \textbf{ne treba predavati}.
-
-\section{Osnovna uputstva}
-Vaš seminarski rad mora da sadrži najmanje jednu \textbf{sliku}, najmanje jednu \textbf{tabelu} i najmanje \textbf{sedam referenci} u spisku literature. Najmanje jedna slika treba da bude originalna i da predstavlja neke podatke koje ste Vi osmislili da treba da prezentujete u svom radu. Isto važi i za najmanje jednu tabelu. 	Od referenci, neophodno je imati bar jednu \textbf{knjigu}, bar jedan \textbf{naučni članak} iz odgovarajućeg časopisa i bar jednu adekvatnu \textbf{veb adresu}. 
-
-\textbf{Dužina seminarskog rada treba da bude od 10 do 12 strana.}
 
 \section{Slike i tabele}
 \label{slike_i_tabele}
@@ -123,11 +120,11 @@ Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na ko
 \section{Osnovna namena programskog jezika, svrha i mogućnosti}
 \label{sec:namena}
 Krajem 80-ih godina prošlog veka, popularnost Objective-C jezika je rasla sa razvojem NeXT sistema. Najviše se koristi za razvoj softvera za Apple iOS operativni sistem. Uticaj Objective-C jezika je vidljiv u Java programskom jeziku.
-Objective-C definiše mali ali moćan skup ekstenzija ANSI C programskog jezika koje omogućavaju objektno-orijentisano programiranje. Cocoa, Apple-ov API za macOS je napisan uz pomoć Objective-C jezika, takodje veliki deo aplikacija je napisan koristeći taj jezik. 
+Objective-C definiše mali ali moćan skup ekstenzija ANSI C programskog jezika koje omogućavaju objektno-orijentisano programiranje. Cocoa \ref{sec:Cocoa}, Apple-ov API za macOS je napisan uz pomoć Objective-C jezika, takodje veliki deo aplikacija je napisan koristeći taj jezik. 
 
 \section{Osnovne osobine ovog programskog jezika, podržane paradigme i koncepti}
 \label{sec:osobine}
-Objective-C je nadskup C programskog jezika koji pruža objektno-orijentisane sposobnosti i dinamičko izvršno okruzenje (eng.~{\em runtime}). Objective-C nasledjuje sintaksu, primitivne tipove i naredbe za tok izvršvanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda. Takodje omogućava dinamičko tipiziranje i povezivanje.
+Objective-C je nadskup C programskog jezika koji pruža objektno-orijentisane sposobnosti i dinamičko izvršno okruženje (eng.~{\em runtime}). Objective-C nasledjuje sintaksu, primitivne tipove i naredbe za tok izvršavanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda. Takodje omogućava dinamičko tipiziranje i povezivanje.
 \subsection{Osnovni koncepti}
 \subsubsection{Klasteri klasa}
 Klasteri klasa (eng.~{\em class clusters}) su programski šablon koji se često koristi u pisanju programa na Objective-C jeziku. Klasteri klasa grupišu odredjeni broj privatnih podklasa unutar javne apstraktne nadklase. 
@@ -154,7 +151,32 @@ MVC smatra da postoje tri vrste objekata: model, pogled i kontroler objekti. MVC
 
 \section{Najpoznatija okruženja (framework) za korišćenje ovog jezika i njihove karakteristike}
 \label{sec:okruzenja}
+\subsection{Cocoa API}
+\label{sec:Cocoa}
+Cocoa \cite{cocoa} je objektno-orijentisano okruženje za Mac OS X operativni sistem. Uz korišćenje Cocoa Touch dodatka za
+prepoznavanje pokreta i realizaciju animacije moguća je izrada aplikacija i na iOS operativnom
+sistemu koji se koristi na mobilnim uređajima kao što su iPhone, iPod i iPad.
+Cocoa aplikacije se
+razvijaju pomoću Xcode i Interface Builder alata, i razvijaju se u programskom jeziku Objective-C.
+Pored nabrojanih alata Cocoa aplikaciju je moguće pisati u jednostavnom uređivaču teksta i
+napraviti izvršnu verziju programa pomoću GCC prevodioca iz komandne linije.
 
+\subsubsection{Istorijat razvoja Cocoa}
+Cocoa je izveden iz NeXTSTEP i OPENSTEP programerskih okruženja razvijenih u NeXT-u kasnih 1980-tih. Apple je kupio NeXT u decembru 1996. godine, i postepeno je počeo da radi na Rhapsody operativnom sistemu koji je trebao da bude direktni naslednik OPENSTEP-a. Trebao je da ima emulacionu bazu za Mac OS aplikacije pod imenom Blue Box. OPENSTEP baza biblioteka i binarna podrška su nazvani Yellow Box. Rhapsody je evoluirao u Mac OS X, a Yellow Box je postao Cocoa. Kao rezultat, Cocoa klase počinju sa skraćenicom ,,NS'' (za NeXT-Sun kreaciju OPENSTEP-a): NSString, NSArray, i tako dalje.
+
+
+Pre njegove sadašnje upotrebe ,,Cocoa'' je bilo ime programa koji je omogućavao deci da kreiraju multimedijalne projekte. Originalno je bila poznata kao KidSim, a sada je licencirana drugoj firmi kao Stagecast Creator. Program je prestao da se razvija u jednoj od racionalizacija koje su sprovedene nakon što se Steve Jobs vratio u Apple. Ime je ponovo upotrebljeno kako bi se izbeglo odlaganje koje bi nastalo registrovanjem novog žiga (eng.~{\em trademark}), uz saglasnost Stagecast-a da reklamira stari Cocoa pod novim imenom.
+
+
+\subsection{GNUstep}
+\label{GNUstep}
+GNUstep \cite{objectivecandgnustep} je besplatno, objektno-orijentisano okruženje, namenjeno za različite arhitekture koje teži jednostavnosti i elegantnosti. U potpunosti je kompatibilno sa Cocoa \ref{sec:Cocoa} okruženjem. Namenjeno je kako razvijanju naprednih desktop aplikacija, tako i serverskih aplikacija. Za razliku od Cocoa moguće je pisati programe za različite operativne sistemime (Solaris, GNU/Linux, NetBSD, OpenBSD, FreeBSD, Windows). 
+Osnovni jezik za razvoj je Objective-C, ali GNUstep nije ograničen samo na to (Java, Ruby, Guile, Scheme).
+
+\subsubsection{Razvoj aplikacija}
+Za razvoj scenskih komponenti aplikacije je namenjen Gorm \cite{gorm}, dok ProjectCenter \cite{projectcenter} predstavlja integrisano razvojno okruženje (eng.~{\em IDE}).   
+Korisničko okruženje Etoile \cite{etoile} koje je moguće koristiti na različitim operativnim sistemima je u potpunosti implementirano koristeći GNUstep. 
+  
 \section{Instalacija i uputstvo za pokretanje na Linux/Windows operativnim sistemima}
 \label{sec:instalacija}
 \subsection{Instalacija neophodnih paketa}
@@ -167,8 +189,7 @@ Prvo što treba da uradimo je da instaliramo GCC podršku za Objective-C.
 $ sudo apt-get install gobjc
 \end{lstlisting}
 
-Zatim treba da instaliramo radno okruženje (eng.~{\em framework}) na kom se moderni Objective-C zasniva i bez kog
-ne bi imalo puno smisla raditi (iako je moguće).
+Zatim treba da instaliramo radno okruženje (eng.~{\em framework}) na kom se moderni Objective-C zasniva i bez kog ne bi imalo puno smisla raditi, iako je moguće.
 To okruženje se zove GNUstep \cite{gnustep} i instalira se komandama:
 
 \begin{lstlisting}[frame=single]
@@ -189,7 +210,7 @@ Da ne bismo svaki put morali da izvršavamo taj skript, možemo da uradimo slede
 $ echo /usr/share/GNUstep/Makefiles/GNUstep.sh >> ~/.bashrc
 \end{lstlisting}
 
-I na taj način, svaki put kad se pokrene nova sesija, biće izvršen GNUstep.sh i nećemo morati da brinemo.
+Na taj način, svaki put kad se pokrene nova sesija, biće izvršen GNUstep.sh i nećemo morati da brinemo.
 
 Kao što smo već naveli, Objective-C koristi GNU-ov C kompajler, uz dodatnu
 podršku.
