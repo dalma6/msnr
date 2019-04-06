@@ -207,6 +207,18 @@ $ ./hello
 \end{lstlisting}
 
 \subsection{Instalacija na Windows operativnim sistemima}
+\subsubsection{Kompajliranje i izvršavanje}
+Kada smo instalirali MinGW i GNUstep, možemo da kompajliramo i izvršavamo Objective-C programe u shell okruženju, koje pokrećemo tako što otvorimo Shell program koji se nalazi u GNUstep.
+Inicijalno se nalazimo u C:\\GNUstep\\home\\<username> direktorijumu.
+Program ćemo kompajlirati sledećom naredbom:
+\begin{lstlisting}[frame=single]
+$ gcc `gnustep-config --objc-flags` -L /GNUstep/System/Library/Libraries hello.m -o hello -lgnustep-base -lobjc
+\end{lstlisting}
+
+A izvršavanje sa:
+\begin{lstlisting}[frame=single]
+./hello.exe
+\end{lstlisting}
 
 \section{Primer jednostavnog koda i njegovo objašnjenje}
 \label{sec:primer}
