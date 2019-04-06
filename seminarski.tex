@@ -78,73 +78,6 @@ Vaš seminarski rad mora da sadrži najmanje jednu \textbf{sliku}, najmanje jedn
 
 \textbf{Dužina seminarskog rada treba da bude od 10 do 12 strana.}
 
-Ко жели, може да пише рад ћирилицом. У том случају, неопходно је да су инсталирани одговарајући пакети: texlive-fonts-extra, texlive-latex-extra, texlive-lang-cyrillic, texlive-lang-other. 
-
-Nemojte koristiti stari način pisanja slova, tj ovo:
-\begin{verbatim}
-\v{s} i \v{c} i \'c ...
-\end{verbatim}
-Koristite direknto naša slova:	
-\begin{verbatim}
-š i č i ć ... 
-\end{verbatim}
-
-
-\section{Engleski termini i citiranje}	
-\label{sec:termini_i_citiranje}
-
-Na svakom mestu u tekstu naglasiti odakle tačno potiču informacije. Uz sve novouvedene termine u zagradi naglasiti od koje engleske reči termin potiče. 
-
-Naredni primeri ilustruju način uvođenja enlegskih termina kao i citiranje.
-
-\begin{primer}
-Problem zaustavljanja (eng.~{\em halting problem}) je neodlučiv \cite{haltingproblem}.
-\end{primer}
-
-\begin{primer}
-Za prevođenje programa napisanih u programskom jeziku C može se koristiti GCC kompajler \cite{gcc}.
-\end{primer}
-
-\begin{primer}
- Da bi se ispitivala ispravost softvera, najpre je potrebno precizno definisati njegovo ponašanje \cite{laski2009software}. 
-\end{primer}
-
-Reference koje se koriste u ovom tekstu zadate su u datoteci {\em seminarski.bib}. Prevođenje u pdf format u Linux okruženju može se uraditi na sledeći način:
-\begin{verbatim}
-pdflatex TemaImePrezime.tex 
-bibtex TemaImePrezime.aux 
-pdflatex TemaImePrezime.tex 
-pdflatex TemaImePrezime.tex 
-\end{verbatim}
-Prvo latexovanje je neophodno da bi se generisao {\em .aux} fajl. {\em bibtex} proizvodi odgovarajući {\em .bbl} fajl koji se koristi za generisanje literature. 
-Potrebna su dva prolaza (dva puta pdflatex) da bi se reference ubacile u tekst (tj da ne bi ostali znakovi pitanja umesto referenci). Dodavanjem novih referenci potrebno je ponoviti ceo postupak.  
-
-
-
-
-
-
-
-
-
-
-
-Broj naslova i podnaslova je proizvoljan. Neophodni su samo Uvod i Zaključak. Na poglavlja unutar teksta referisati se po potrebi. 
-\begin{primer}
-U odeljku \ref{sec:naslov1} precizirani su osnovni pojmovi, dok su zaključci dati u odeljku \ref{sec:zakljucak}.
-\end{primer}
-
-Još jednom da napomenem da nema razloga da pišete:
-\begin{verbatim}
-\v{s} i \v{c} i \'c ...
-\end{verbatim}
-Možete koristiti srpska slova
-\begin{verbatim}
-š i č i ć ... 
-\end{verbatim}
-
-
-
 \section{Slike i tabele}
 \label{slike_i_tabele}
 
@@ -181,28 +114,12 @@ d &e&f\\ \hline
 
 \end{primer}
 
-\section{K\^{o}d i paket listings}
-Za ubacivanje koda koristite paket \textbf{listings}:
-\url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}
-
-Primer ubacivanja koda
-\begin{lstlisting}[frame=single]
-# This program adds up integers in the command line
-import sys
-try:
-    total = sum(int(arg) for arg in sys.argv[1:])
-    print 'sum =', total
-except ValueError:
-    print 'Please supply integer arguments'
-\end{lstlisting}
-
-
-\section{Nastanak i istorijski razvoj, mesto u ravojnom stablu, uticaji drugih programskih jezika}
+\section{Nastanak i istorijski razvoj, mesto u razvojnom stablu, uticaji drugih programskih jezika}
 \label{sec:osnovno}
 
 \subsection{Nastanak i istorijski razvoj}
 \label{subsec:istorija}
-Iako se pojam jezika Objective-C primarno vezuje za proizvode kompanije Epl (engl. Apple) -- MAC OS X, iPhone itd, on je zapravo nastao mnogo pre njih. Njegove temelje postavili su Bred Koks i Tom Lav 1981. godine, težeći da nađu način za povećavanje produktivnosti programera. Te godine pojavio se novi, revolucionarni jezik Smalltalk, koji je tada unapredio koncept objektno-orijentisanog programiranja. U osnovi tog jezika bilo je posmatranje programa kao skupova objekata koji su mogli da komuniciraju jedni sa drugima dinamički pozivajući metode. To je omogućilo da se stanje programa menja pod uticajem korisnika. Koks je u ovoj ideji video mogućnost da se vrtoglavo ubrza pisanje programa, pošto su se u njemu mogle praviti biblioteke objekata i posle koristiti u drugim programima bez izmene. Međutim, Smalltalk je bio veoma spor i zahtevao je da se svi programi pišu i pokreću u posebnom okruženju. Tada se javila potreba za spajanjem objektno-orijentisanih ideja Smalltalk-a i brzog jezika C. Koks je 1983. objavio naučni rad u kom je predstavio objektno-orijentisani prekompilator (eng.~{\em Object-Oriented Precompiler}). Da bi ovu svoju ideju izbacili na tržište, njih dvojica su osnovali kompaniju Stepstoun (eng.~{\em Stepstone}), izmenili kompilator za OOPC i preimenovali jezik u Objective-C. Iako je glavna ideja ovog projekta bila pisanje i prodavanje pomenutih biblioteka koje su mogle ponovo da se koriste, korisnici su imali dosta zamerki, te je jezik sve više poprimao karakteristike objektno-orijentisanih jezika kakve ih danas znamo, kao što su sakupljač otpada i interpreter, te je kompanija uskoro propala. Stiv Džobs je 1988. kupio licencu, a nekoliko godina kasnije i sva prava za Objective-C za potrebe svoje kompanije NeXT Computer koja se  1996. pripojila Apple-u. Sa tom tranzicijom, sam jezik je pretrpeo razne promene, a najvažnije su uvođenje dveju novih ,,komponenti": kategorija (eng.~{\em categories}), danas poznatih kao ekstenzije (eng.~{\em extensions}) i protokola (eng.~{\em protocols}). Kategorije su služile da programerima omoguće da sami dodaju funkcije u objekte iz već postojećih biblioteka, a protokoli su omogućavali objektima da komunuciraju jedni s drugima. Oni su danas podržani u jeziku Java i poznati su nam kao interfejsi (eng.~{\em interfaces}). 
+Iako se pojam jezika Objective-C primarno vezuje za proizvode kompanije Epl (engl. Apple) -- MAC OS X, iPhone itd, on je zapravo nastao mnogo pre njih. Njegove temelje postavili su Bred Koks i Tom Lav 1981. godine, težeći da nađu način za povećavanje produktivnosti programera. Te godine pojavio se novi, revolucionarni jezik Smalltalk \cite{smalltalk}, koji je tada unapredio koncept objektno-orijentisanog programiranja. U osnovi tog jezika bilo je posmatranje programa kao skupova objekata koji su mogli da komuniciraju jedni sa drugima dinamički pozivajući metode. To je omogućilo da se stanje programa menja pod uticajem korisnika. Koks je u ovoj ideji video mogućnost da se vrtoglavo ubrza pisanje programa, pošto su se u njemu mogle praviti biblioteke objekata i posle koristiti u drugim programima bez izmene. Međutim, Smalltalk je bio veoma spor i zahtevao je da se svi programi pišu i pokreću u posebnom okruženju. Tada se javila potreba za spajanjem objektno-orijentisanih ideja Smalltalk-a i brzog jezika C. Koks je 1983. objavio naučni rad u kom je predstavio objektno-orijentisani prekompilator (eng.~{\em Object-Oriented Precompiler}). Da bi ovu svoju ideju izbacili na tržište, njih dvojica su osnovali kompaniju Stepstoun (eng.~{\em Stepstone}), izmenili kompilator za OOPC i preimenovali jezik u Objective-C. Iako je glavna ideja ovog projekta bila pisanje i prodavanje pomenutih biblioteka koje su mogle ponovo da se koriste, korisnici su imali dosta zamerki, te je jezik sve više poprimao karakteristike objektno-orijentisanih jezika kakve ih danas znamo, kao što su sakupljač otpada i interpreter, te je kompanija uskoro propala. Stiv Džobs je 1988. kupio licencu, a nekoliko godina kasnije i sva prava za Objective-C za potrebe svoje kompanije NeXT Computer koja se  1996. pripojila Apple-u. Sa tom tranzicijom, sam jezik je pretrpeo razne promene, a najvažnije su uvođenje dveju novih ,,komponenti": kategorija (eng.~{\em categories}), danas poznatih kao ekstenzije (eng.~{\em extensions}) i protokola (eng.~{\em protocols}). Kategorije su služile da programerima omoguće da sami dodaju funkcije u objekte iz već postojećih biblioteka, a protokoli su omogućavali objektima da komunuciraju jedni s drugima. Oni su danas podržani u jeziku Java i poznati su nam kao interfejsi (eng.~{\em interfaces}). 
 
 \subsection{Mesto u razvojnom stablu}
 \label{subsec:stablo}
@@ -215,17 +132,17 @@ Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na ko
 \section{Osnovna namena programskog jezika, svrha i mogućnosti}
 \label{sec:namena}
 Krajem 80-ih godina prošlog veka, popularnost Objective-C jezika je rasla sa razvojem NeXT sistema. Najviše se koristi za razvoj softvera za Apple iOS operativni sistem. Uticaj Objective-C jezika je vidljiv u Java programskom jeziku.
-Objective-C definiše mali ali moćan skup ekstenzija ANSI C programskog jezika koje omogućavaju objektno orijentisano programiranje. Cocoa, Apple-ov API za macOS je napisan uz pomoć Objective-C jezika, takodje veliki deo aplikacija je napisan koristeći taj jezik. 
+Objective-C definiše mali ali moćan skup ekstenzija ANSI C programskog jezika koje omogućavaju objektno-orijentisano programiranje. Cocoa, Apple-ov API za macOS je napisan uz pomoć Objective-C jezika, takodje veliki deo aplikacija je napisan koristeći taj jezik. 
 
 \section{Osnovne osobine ovog programskog jezika, podržane paradigme i koncepti}
 \label{sec:osobine}
-Objective-C je nadskup C programskog jezika koji pruža objektno orijentisane sposobnosti i dinamičko izvršno okruzenje (eng.~{\em runtime}). Objective-C nasledjuje sintaksu, primitivne tipove i naredbe za tok izvršvanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda. Takodje omogućava dinamičko tipiziranje i povezivanje.
+Objective-C je nadskup C programskog jezika koji pruža objektno-orijentisane sposobnosti i dinamičko izvršno okruzenje (eng.~{\em runtime}). Objective-C nasledjuje sintaksu, primitivne tipove i naredbe za tok izvršvanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda. Takodje omogućava dinamičko tipiziranje i povezivanje.
 \subsection{Osnovni koncepti}
 \subsubsection{Klasteri klasa}
-Klasteri klasa (eng.~{\em class clusters}) su programskišsablon koji se često koristi u pisanju programa na Objective-C jeziku. Klasteri klasa grupišu odredjeni broj privatnih podklasa unutar javne apstraktne nadklase. 
-Ovakvo grupisanje pojednostavljuje javno vidljivu arhitekturu objektno orijentisanih biblioteka i radnih okvira, bez smanjenja njihove funkcionalnosti. Apstraktna nadklasa mora da deklariše metode za kreiranje instanci svojih privatnih podklasa. 
+Klasteri klasa (eng.~{\em class clusters}) su programski šablon koji se često koristi u pisanju programa na Objective-C jeziku. Klasteri klasa grupišu odredjeni broj privatnih podklasa unutar javne apstraktne nadklase. 
+Ovakvo grupisanje pojednostavljuje javno vidljivu arhitekturu objektno-orijentisanih biblioteka i radnih okvira, bez smanjenja njihove funkcionalnosti. Apstraktna nadklasa mora da deklariše metode za kreiranje instanci svojih privatnih podklasa. 
 \subsubsection{Introspekcija}
-Introspekcija je mocno svojstvo objektno orijentisanih jezika i okruzenja. Ono predstavlja mogucnost objekta da predstavi detalje o sopstvenoj implementaciji u toku izvršavanja programa. Ti detalji mogu biti njegovo mesto u drvetu nasledjivanja, da li implementira odredjeni protokol i da li odgovara na neku poruku. Primer: 
+Introspekcija je moćno svojstvo objektno-orijentisanih jezika i okruženja. Ono predstavlja mogućnost objekta da predstavi detalje o sopstvenoj implementaciji u toku izvršavanja programa. Ti detalji mogu biti njegovo mesto u drvetu nasledjivanja, da li implementira odredjeni protokol i da li odgovara na neku poruku. Primer: 
 \begin{lstlisting}[frame=single]
 while ( id anObject = [objectEnumerator nextObject] ) {
     if ( [self class] == [anObject superclass] ) {
@@ -234,12 +151,12 @@ while ( id anObject = [objectEnumerator nextObject] ) {
 }
 \end{lstlisting}
 \subsubsection{Alokacija Objekata}
-Prilikom alokacije objekata, dodeljuje se zahtevana memorija iz regiona virtualne memorije dostupne programu. Da bi se izračunalo koliko memorije treba alocirati, uzimaju se u obzir instancirane promenjlive tog objekta - uključujući njihove tipove i redosled - kao sto je navedeno u klasi objekta.
+Prilikom alokacije objekata, dodeljuje se zahtevana memorija iz regiona virtualne memorije dostupne programu. Da bi se izračunalo koliko memorije treba alocirati, uzimaju se u obzir instancirane promenjlive tog objekta - uključujući njihove tipove i redosled - kao što je navedeno u klasi objekta.
 
 \subsubsection{MVC}
-MVC (eng.~{\em Model-View-Controller}) programski šablon je šablon visokog nivoa koji predstavlja globalnu arhitekturu aplikacije i razvrstava objekte prema ulozi koju imaju u toj aplikaciji.
-Objektno orijentisano programiranje ima više koristi od ovog modela; povećava se modularnost korišćenih objekata, njihovi interfejsi su bolje definisani. Sami programi se bolje adaptiraju promeni zahteva.
-MVC smatra da postoje tri vrste objekata: model, pogled, i kontroler objekti. MVC šablon definiše uloge koji ovi objekti imaju u aplikaciji i način na koji komuniciraju. Pri dizajniranju aplikacije, veliki korak je biranje - ili pravljenje - klasa za objekte koji pripadaju jednoj od ovih uloga. 
+MVC (eng.~{\em Model-View-Controller}) je programski šablon (eng.~{\em design pattern}) visokog nivoa koji predstavlja globalnu arhitekturu aplikacije i razvrstava objekte prema ulozi koju imaju u toj aplikaciji.
+Objektno-orijentisano programiranje ima više koristi od ovog modela; povećava se modularnost korišćenih objekata, njihovi interfejsi su bolje definisani. Sami programi se bolje adaptiraju promeni zahteva.
+MVC smatra da postoje tri vrste objekata: model, pogled i kontroler objekti. MVC šablon definiše uloge koje ovi objekti imaju u aplikaciji i način na koji komuniciraju. Pri dizajniranju aplikacije, bitan korak je biranje - ili pravljenje - klasa za objekte koji pripadaju jednoj od ovih uloga. 
 %\includegraphics{traditional_mvc}
 
 \section{Najpoznatija okruženja (framework) za korišćenje ovog jezika i njihove karakteristike}
@@ -249,9 +166,9 @@ MVC smatra da postoje tri vrste objekata: model, pogled, i kontroler objekti. MV
 \label{sec:instalacija}
 \subsection{Instalacija neophodnih paketa}
 Da bismo mogli da kompajliramo programe napisane u Objective-C, potrebno je prvo da instaliramo
-par paketa. Za kompajliranje Objective-C programa koristi se gcc kompajler{\cite{gcc}, uz jos par
+par paketa. Za kompajliranje Objective-C programa koristi se GCC kompajler{\cite{gcc}, uz još par
 dodataka.
-Prvo što treba da uradimo je da instaliramo gcc podršku za Objective-C.
+Prvo što treba da uradimo je da instaliramo GCC podršku za Objective-C.
 
 \begin{lstlisting}[frame=single]
 $ sudo apt-get install gobjc
@@ -259,7 +176,7 @@ $ sudo apt-get install gobjc
 
 Zatim treba da instaliramo radno okruženje (eng.~{\em framework}) na kom se moderni Objective-C zasniva i bez kog
 ne bi imalo puno smisla raditi (iako je moguće).
-To okruženje se zove GNUstep i instalira se komandom
+To okruženje se zove GNUstep \cite{gnustep} i instalira se komandama:
 
 \begin{lstlisting}[frame=single]
 $ sudo apt-get install gnustep
@@ -267,23 +184,23 @@ $ sudo apt-get install gnustep-devel
 \end{lstlisting}
 
 \subsection{Kompajliranje}
-Svaki put kada pokrenemo novu sesiju, moramo da pokrenemo jedan skript, da bismo mogli da kompajliramo Objective-C programe.
+Svaki put kada pokrenemo novu sesiju, moramo da pokrenemo skript GNUstep.sh, da bismo mogli da kompajliramo Objective-C programe.
 \begin{lstlisting}[frame=single]
 $ chmod +x /usr/share/GNUstep/Makefiles/GNUstep.sh
 $ /usr/share/GNUstep/Makefiles/GNUstep.sh
 \end{lstlisting}
 
-Da ne bismo svaki put morali da izvršavamo GNUstep.sh, možemo da uradimo sledeće:
+Da ne bismo svaki put morali da izvršavamo taj skript, možemo da uradimo sledeće:
 
 \begin{lstlisting}[frame=single]
 $ echo /usr/share/GNUstep/Makefiles/GNUstep.sh >> ~/.bashrc
 \end{lstlisting}
 
-I na taj način, svaki put kad se pokrene nova sesija, bice izvršen GNUstep.sh i nećemo morati da brinemo.
+I na taj način, svaki put kad se pokrene nova sesija, biće izvršen GNUstep.sh i nećemo morati da brinemo.
 
 Kao što smo već naveli, Objective-C koristi GNU-ov C kompajler, uz dodatnu
 podršku.
-Sem standardnih argumenata, gcc-u su potrebni i dodatni argumenti (eng.~{\em flags}), kao što su -lobjc, -lgnustep-base...
+Sem standardnih argumenata, GCC-u su potrebni i dodatni argumenti (eng.~{\em flags}), kao što su -lobjc, -lgnustep-base, itd.
 
 Dakle ako želimo da prevedemo hello.m program, moramo da izvršimo sledeće:
 \begin{lstlisting}[frame=single]
@@ -298,7 +215,7 @@ $ ./hello
 \section{Primer jednostavnog koda i njegovo objašnjenje}
 \label{sec:primer}
 
-Zatim, navedimo primer zastarelog (od verzije MAC 10.5), ali zanimljivog koda koji omogućava ,,imitiranje" (engl. posing). 
+Zatim, navedimo primer zastarelog (od verzije MAC 10.5), ali zanimljivog koda koji omogućava ,,imitiranje" (eng.~{\em posing}). 
 
 \begin{lstlisting}[frame=single]
 #import <Foundation/Foundation.h>
@@ -328,34 +245,6 @@ int main() {
 }
 \end{lstlisting}
 
-\section{Sve ono što je specifično i važno za sam taj programski jezik}
-\label{sec:naslovN}
-
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-
-\subsection{... podnaslov}
-\label{subsec:podnaslovK}
-
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-
-\subsection{... podnaslov}
-\label{subsec:podnaslovM}
-
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-
-
 \section{Zaključak}
 \label{sec:zakljucak}
 
@@ -378,13 +267,6 @@ Ovde pišem zaključak.
 \bibliography{seminarski} 
 \bibliographystyle{plain}
 
-\appendix
-\section{Dodatak}
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
 
 
 \end{document}
