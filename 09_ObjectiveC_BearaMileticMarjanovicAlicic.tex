@@ -58,7 +58,7 @@
 \maketitle
 
 \abstract{
-U ovom radu je opisan nastanak i razvoj programskog jezika Objective-C, kao i njegova uloga u razvoju drugih jezika koji imaju široku primenu(Java, Swift) kao i bitnih koncepata koji su počevši od Objective-C ušli u upotrebu (interfejsi). Predstavljene su osnovne karakteristike jezika i najbitniji koncepti koje jezik, na kom je zasnovan operativni sistem MAC OS, implementira kao i najpoznatija razvojna okruženja (eng.~{\em framework}).   
+U ovom radu je opisan nastanak i razvoj programskog jezika Objective-C, kao i njegova uloga u razvoju drugih jezika koji imaju široku primenu (Java, Swift) kao i bitnih koncepata koji su počevši od Objective-C ušli u upotrebu (interfejsi). Predstavljene su osnovne karakteristike jezika i najbitniji koncepti koje jezik, na kom je zasnovan operativni sistem MAC OS, implementira kao i najpoznatija razvojna okruženja (eng.~{\em framework}).   
 
 \setcounter{tocdepth}{1}
 \tableofcontents
@@ -75,7 +75,7 @@ Kroz naredna poglavlja biće predstavljen uticaj jezika na svet kakav danas pozn
 
 \subsection{Nastanak i istorijski razvoj}
 \label{subsec:istorija}
-Iako se pojam jezika Objective-C primarno vezuje za proizvode kompanije Epl (engl. Apple) -- MAC OS X, iPhone itd, on je zapravo nastao mnogo pre njih. Njegove temelje postavili su Bred Koks i Tom Lav 1981. godine, težeći da nađu način za povećavanje produktivnosti programera. Te godine pojavio se novi, revolucionarni jezik Smalltalk \cite{smalltalk}, koji je tada unapredio koncept objektno-orijentisanog programiranja. U osnovi tog jezika bilo je posmatranje programa kao skupova objekata koji su mogli da komuniciraju jedni sa drugima dinamički pozivajući metode. To je omogućilo da se stanje programa menja pod uticajem korisnika. Koks je u ovoj ideji video mogućnost da se vrtoglavo ubrza pisanje programa, pošto su se u njemu mogle praviti biblioteke objekata i posle koristiti u drugim programima bez izmene. Međutim, Smalltalk je bio veoma spor i zahtevao je da se svi programi pišu i pokreću u posebnom okruženju. Tada se javila potreba za spajanjem objektno-orijentisanih ideja Smalltalk-a i brzog jezika C \ref{tab:tabela1}. Koks je 1983. objavio naučni rad u kom je predstavio objektno-orijentisani prekompilator (eng.~{\em Object-Oriented Precompiler}). Da bi ovu svoju ideju izbacili na tržište, njih dvojica su osnovali kompaniju Stepstoun (eng.~{\em Stepstone}), izmenili kompilator za OOPC i preimenovali jezik u Objective-C. Iako je glavna ideja ovog projekta bila pisanje i prodavanje pomenutih biblioteka koje su mogle ponovo da se koriste, korisnici su imali dosta zamerki, te je jezik sve više poprimao karakteristike objektno-orijentisanih jezika kakve ih danas znamo, kao što su sakupljač otpada (eng.~{\em garbage collector}) i interpreter, te je kompanija uskoro propala. Stiv Džobs je 1988. kupio licencu, a nekoliko godina kasnije i sva prava za Objective-C za potrebe svoje kompanije NeXT Computer koja se  1996. pripojila Apple-u. Sa tom tranzicijom, sam jezik je pretrpeo razne promene, a najvažnije su uvođenje dveju novih ,,komponenti'': kategorija (eng.~{\em categories}), danas poznatih kao ekstenzije (eng.~{\em extensions}) i protokola (eng.~{\em protocols}). Kategorije su služile da programerima omoguće da sami dodaju funkcije u objekte iz već postojećih biblioteka, a protokoli su omogućavali objektima da komuniciraju jedni s drugima. Oni su danas podržani u jeziku Java i poznati su kao interfejsi (eng.~{\em interfaces}). 
+Iako se pojam jezika Objective-C primarno vezuje za proizvode kompanije Epl (eng.~{\em Apple}) -- MAC OS X, iPhone itd, on je zapravo nastao mnogo pre njih. Njegove temelje postavili su Bred Koks i Tom Lav 1981. godine, težeći da nađu način za povećavanje produktivnosti programera \cite{history}. Te godine pojavio se novi, revolucionarni jezik Smalltalk \cite{smalltalk}, koji je tada unapredio koncept objektno-orijentisanog programiranja. U osnovi tog jezika bilo je posmatranje programa kao skupova objekata koji su mogli da komuniciraju jedni sa drugima dinamički pozivajući metode. To je omogućilo da se stanje programa menja pod uticajem korisnika. Koks je u ovoj ideji video mogućnost da se vrtoglavo ubrza pisanje programa, pošto su se u njemu mogle praviti biblioteke objekata i posle koristiti u drugim programima bez izmene. Međutim, Smalltalk je bio veoma spor i zahtevao je da se svi programi pišu i pokreću u posebnom okruženju. Tada se javila potreba za spajanjem objektno-orijentisanih ideja Smalltalk-a i brzog jezika C \ref{tab:tabela1}. Koks je 1983. objavio naučni rad u kom je predstavio objektno-orijentisani prekompilator (eng.~{\em Object-Oriented Precompiler}). Da bi ovu svoju ideju izbacili na tržište, njih dvojica su osnovali kompaniju Stepstoun (eng.~{\em Stepstone}), izmenili kompilator za OOPC i preimenovali jezik u Objective-C. Iako je glavna ideja ovog projekta bila pisanje i prodavanje pomenutih biblioteka koje su mogle ponovo da se koriste, korisnici su imali dosta zamerki, te je jezik sve više poprimao karakteristike objektno-orijentisanih jezika kakve ih danas znamo, kao što su sakupljač otpada (eng.~{\em garbage collector}) i interpreter, te je kompanija uskoro propala. Stiv Džobs je 1988. kupio licencu, a nekoliko godina kasnije i sva prava za Objective-C za potrebe svoje kompanije NeXT Computer koja se  1996. pripojila Apple-u. Sa tom tranzicijom, sam jezik je pretrpeo razne promene, a najvažnije su uvođenje dveju novih ,,komponenti'': kategorija (eng.~{\em categories}), danas poznatih kao ekstenzije (eng.~{\em extensions}) i protokola (eng.~{\em protocols}). Kategorije su služile da programerima omoguće da sami dodaju funkcije u objekte iz već postojećih biblioteka, a protokoli su omogućavali objektima da komuniciraju jedni s drugima. Oni su danas podržani u jeziku Java i poznati su kao interfejsi (eng.~{\em interfaces}). 
 
 \begin{table}[h!]
 \caption{Uticaj jezika na Objective-C}
@@ -130,10 +130,14 @@ Prilikom alokacije objekata, dodeljuje se zahtevana memorija iz regiona virtualn
 \subsubsection{MVC}
 MVC (eng.~{\em Model-View-Controller}) \cite{mvc} je programski šablon (eng.~{\em design pattern}) visokog nivoa koji predstavlja globalnu arhitekturu aplikacije i razvrstava objekte prema ulozi koju imaju u toj aplikaciji.
 Objektno-orijentisano programiranje ima više koristi od ovog modela; povećava se modularnost korišćenih objekata, njihovi interfejsi su bolje definisani. Sami programi se bolje adaptiraju promeni zahteva.
-MVC smatra da postoje tri vrste objekata: model, pogled i kontroler objekti. MVC šablon definiše uloge koje ovi objekti imaju u aplikaciji i način na koji komuniciraju. Pri dizajniranju aplikacije, bitan korak je biranje - ili pravljenje - klasa za objekte koji pripadaju jednoj od ovih uloga. 
-\begin{center}
-	\makebox[\textwidth]{\includegraphics[width=\textwidth]{traditional_mvc1}}
-\end{center}
+MVC smatra da postoje tri vrste objekata: model, pogled i kontroler objekti. MVC šablon definiše uloge koje ovi objekti imaju u aplikaciji i način na koji komuniciraju \ref{fig:MVC}. Pri dizajniranju aplikacije, bitan korak je biranje - ili pravljenje - klasa za objekte koji pripadaju jednoj od ovih uloga. 
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.6]{traditional_mvc1}
+	\caption{MVC arhitektura}	
+	\label{fig:MVC}
+	\end{center}
+\end{figure}
 
 \section{Najpoznatija okruženja (framework) za korišćenje ovog jezika i njihove karakteristike}
 \label{sec:okruzenja}
@@ -221,7 +225,7 @@ A izvršavanje sa:
 \end{lstlisting}
 \section{Primer jednostavnog koda i njegovo objašnjenje}
 \label{sec:primer}
-Zatim, navedimo primer zanimljivog koda \cite{tutorijali} koji omogućava kategorije (eng.~{\em categories}). Kategorije su koncept jeyika Objective-C koji omogućava korisnu funkcionalnost dodavanja metode klasi samo za određenu upotrebu. Dakle, koristeći kategorije, možemo dodati neku metodu u klasu, ali samo za svoju aplikaciju, tako da klasa zapravo ostane ista. Svaka metoda uvedena kroz kategoriju biće dostupna svim instancama te klase (u okviru aplikacije u kojoj je dodata, naravno), kao i instancama svih klasa koje je nasleđuju. Pri izvršavanju takvih metoda nema nikakve razlike u odnosu metode iz klase napravljene na tradicionalan način.
+Zatim, navedimo primer zanimljivog koda \cite{tutorijali} koji omogućava kategorije (eng.~{\em categories}). Kategorije su koncept jezika Objective-C koji omogućava korisnu funkcionalnost dodavanja metode klasi samo za određenu upotrebu. Dakle, koristeći kategorije, možemo dodati neku metodu u klasu, ali samo za svoju aplikaciju, tako da klasa zapravo ostane ista. Svaka metoda uvedena kroz kategoriju biće dostupna svim instancama te klase (u okviru aplikacije u kojoj je dodata, naravno), kao i instancama svih klasa koje je nasleđuju. Pri izvršavanju takvih metoda nema nikakve razlike u odnosu metode iz klase napravljene na tradicionalan način.
 
 
 \begin{lstlisting}[frame=single]
@@ -245,7 +249,7 @@ Sintaksa kojom se najavljuje da će biti uvedena kategorija je ista kao i kad se
 @end
 \end{lstlisting}
 
-Tu se posle znaka + navodi (u zagradama) tip, a potom ime metode koja će biti dodata klasi, a zatim se ključnim rečima implementation i end najavljuje da između njih sledi definicija nečega, u ovom slučaju gorenavedene kategorije. Tu se znakom + najavljuje dodavanje metode, a posle njenog tipa i imena u vitičastim zadradama sledi kod. Ovde smo definisali jednu jednostavnu metodu koja vraća nisku ,,Zdravo".
+Tu se posle znaka + navodi (u zagradama) tip, a potom ime metode koja će biti dodata klasi, a zatim se ključnim rečima implementation i end najavljuje da između njih sledi definicija nečega, u ovom slučaju gorenavedene kategorije. Tu se znakom + najavljuje dodavanje metode, a posle njenog tipa i imena u vitičastim zagradama sledi kod. Ovde smo definisali jednu jednostavnu metodu koja vraća nisku ,,Zdravo''.
 
 \section{Zaključak}
 \label{sec:zakljucak}
@@ -253,7 +257,7 @@ U ovom radu su opisane najvažnije osobine i koncepti jezika. Objective-C predst
 
 \addcontentsline{toc}{section}{Literatura}
 \appendix
-\bibliography{seminarski} 
+\bibliography{09_ObjectiveC_BearaMileticMarjanovicAlicic} 
 \bibliographystyle{plain}
 
 \end{document}
