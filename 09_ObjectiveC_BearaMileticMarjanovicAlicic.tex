@@ -48,8 +48,10 @@
 }
 
 \begin{document}
+  
 
-\title{Programski jezik Objective-C\\ 
+
+\title{Solidan pokušaj unapređenja C-a\\ 
 \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
 \author{Dalma Beara, Denis Aličić, Mateja Marjanović, Anja Miletić
@@ -72,6 +74,7 @@ Kroz naredna poglavlja biće predstavljen uticaj jezika na svet kakav danas pozn
 
 \section{Nastanak i istorijski razvoj, mesto u razvojnom stablu, uticaji drugih programskih jezika}
 \label{sec:osnovno}
+U ovoj sekciji biće naveden istorijski razvoj, šta je sve na njega uticalo, kao i na šta je on uticao.
 
 \subsection{Nastanak i istorijski razvoj}
 \label{subsec:istorija}
@@ -101,29 +104,45 @@ Najpopularniji jezici na koje je uticao Objective-C su Swift i Java, a navode se
 
 \subsection{Uticaj drugih programskih jezika}
 \label{subsec:uticaj}
-Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na kojima počiva Smalltalk utočenih u sintaksu jezika C. Isprva je čak funkcionisao tako što je kod prevođen na C i onda izvršavan. S druge strane, on je uticao na jezik Swift koji je razvio Epl. Swift \cite{swift} se često naziva i ,,Objective-C bez C-a'' kao i na Javu \ref{fig:Razvojno_stablo}. 
+Kao što je već navedeno, Objective-C je nastao kao kombinacija koncepata na kojima počiva Smalltalk utočenih u sintaksu jezika C. Isprva je čak funkcionisao tako što je kod prevođen na C i onda izvršavan. S druge strane, on je uticao na jezik Swift koji je razvio Epl. Swift \cite{swift} se često naziva i ,,Objective-C bez C-a'' \ref{fig:Razvojno_stablo}. 
 
 \section{Osnovna namena programskog jezika, svrha i mogućnosti}
 \label{sec:namena}
 Krajem 80-ih godina prošlog veka, popularnost Objective-C jezika je rasla sa razvojem NeXT sistema. Najviše se koristi za razvoj softvera za Apple iOS operativni sistem. Uticaj Objective-C jezika je vidljiv u Java programskom jeziku.
-Objective-C definiše mali ali moćan skup ekstenzija ANSI C programskog jezika koje omogućavaju objektno-orijentisano programiranje. Cocoa \ref{sec:Cocoa}, Apple-ov API za macOS je napisan uz pomoć Objective-C jezika, takodje veliki deo aplikacija je napisan koristeći taj jezik. 
+Objective-C definiše mali ali moćan skup ekstenzija ANSI C programskog jezika koje omogućavaju objektno-orijentisano programiranje. Cocoa \ref{sec:Cocoa}, Apple-ov API za macOS je napisan uz pomoć Objective-C jezika, takodje veliki deo aplikacija je napisan koristeći taj jezik. Međutim, ono što treba napomenuti je da je, po istraživanju portala Stackoverflow, ovaj jezik rangiran kao jedan od najnepoželjnijih mežu programerima koji ga koriste.
 
 \section{Osnovne osobine ovog programskog jezika, podržane paradigme i koncepti}
 \label{sec:osobine}
-Objective-C je nadskup C programskog jezika koji pruža objektno-orijentisane sposobnosti i dinamičko izvršno okruženje (eng.~{\em runtime}). Objective-C nasledjuje sintaksu, primitivne tipove i naredbe za tok izvršavanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda. Takodje omogućava dinamičko tipiziranje i povezivanje.
+Objective-C je pravi nadskup programskog jezika C koji pruža objektno-orijentisane sposobnosti i dinamičko izvršno okruženje (eng.~{\em runtime}). Objective-C nasleđuje sintaksu, primitivne tipove i naredbe za tok izvršavanja od jezika C, a dodaje sintaksu za definisanje klasa i metoda, kao i mnoge biblioteke i ugrađene klasne tipove. Takodje omogućava dinamičko tipiziranje i povezivanje.
+
 \subsection{Osnovni koncepti}
+U predstojećim pasusima biće opisani neki zanimljivi koncepti programskog jezika Objective-C.
+\subsubsection{Klasa NSObject}
+Klasa NSObject predstavlja baznu klasu za većinu klasnih hijerarhija u ovom jeziku. Ona svojim naslednicama (na primer NSString, NSArray, NSNumber, NSDate...) omogućava da se ponašaju kao objekti i pruža im osnovni interfejs ka rantajm (~{\em runtime}) sistemu.
+
+Na slici ispod možemo videti jednu tipičnu deklaraciju korisnički definisane klase.
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.6]{bruKt.jpg}
+	\caption{korisnički definisana klasa}	
+	\label{fig:bruKt}
+	\end{center}
+\end{figure}
+
 \subsubsection{Klasteri klasa}
-Klasteri klasa (eng.~{\em class clusters}) su programski šablon koji se često koristi u pisanju programa na Objective-C jeziku. Klasteri klasa grupišu odredjeni broj privatnih podklasa unutar javne apstraktne nadklase. 
+Klasteri klasa (eng.~{\em class clusters}) su programski šablon koji se često koristi u pisanju programa na Objective-C jeziku. Klasteri klasa grupišu određeni broj privatnih podklasa unutar javne apstraktne nadklase. 
 Ovakvo grupisanje pojednostavljuje javno vidljivu arhitekturu objektno-orijentisanih biblioteka i radnih okvira, bez smanjenja njihove funkcionalnosti. Apstraktna nadklasa mora da deklariše metode za kreiranje instanci svojih privatnih podklasa. 
 \subsubsection{Introspekcija}
-Introspekcija je moćno svojstvo objektno-orijentisanih jezika i okruženja. Ono predstavlja mogućnost objekta da predstavi detalje o sopstvenoj implementaciji u toku izvršavanja programa. Ti detalji mogu biti njegovo mesto u drvetu nasledjivanja, da li implementira odredjeni protokol i da li odgovara na neku poruku. Primer: 
+Introspekcija je moćno svojstvo objektno-orijentisanih jezika i okruženja. Ono predstavlja mogućnost objekta da predstavi detalje o sopstvenoj implementaciji u toku izvršavanja programa. Ti detalji mogu biti njegovo mesto u drvetu nasleđivanja, da li implementira određeni protokol i da li odgovara na neku poruku. Primer: 
 \begin{lstlisting}[frame=single]
 while ( id anObject = [objectEnumerator nextObject] ) {
     if ( [self class] == [anObject superclass] ) {
         // do something appropriate...
     }
 }
-\end{lstlisting}
+\end{lstlisting} 
+\caption{Listing 1: introspekcija} \\
+
 \subsubsection{Alokacija objekata}
 Prilikom alokacije objekata, dodeljuje se zahtevana memorija iz regiona virtualne memorije dostupne programu. Da bi se izračunalo koliko memorije treba alocirati, uzimaju se u obzir instancirane promenjlive tog objekta - uključujući njihove tipove i redosled - kao što je navedeno u klasi objekta.
 
@@ -155,7 +174,7 @@ napraviti izvršnu verziju programa pomoću GCC prevodioca iz komandne linije.
 Cocoa je izveden iz NeXTSTEP i OPENSTEP programerskih okruženja razvijenih u NeXT-u kasnih 1980-tih. Apple je kupio NeXT u decembru 1996. godine, i postepeno je počeo da radi na Rhapsody operativnom sistemu koji je trebao da bude direktni naslednik OPENSTEP-a. Trebao je da ima emulacionu bazu za Mac OS aplikacije pod imenom Blue Box. OPENSTEP baza biblioteka i binarna podrška su nazvani Yellow Box. Rhapsody je evoluirao u Mac OS X, a Yellow Box je postao Cocoa. Kao rezultat, Cocoa klase počinju sa skraćenicom ,,NS'' (za NeXT-Sun kreaciju OPENSTEP-a): NSString, NSArray, i tako dalje.
 
 
-Pre njegove sadašnje upotrebe ,,Cocoa'' je bilo ime programa koji je omogućavao deci da kreiraju multimedijalne projekte. Originalno je bila poznata kao KidSim, a sada je licencirana drugoj firmi kao Stagecast Creator. Program je prestao da se razvija u jednoj od racionalizacija koje su sprovedene nakon što se Steve Jobs vratio u Apple. Ime je ponovo upotrebljeno kako bi se izbeglo odlaganje koje bi nastalo registrovanjem novog žiga (eng.~{\em trademark}), uz saglasnost Stagecast-a da reklamira stari Cocoa pod novim imenom.
+Pre njegove sadašnje upotrebe ,,Cocoa'' je bilo ime programa koji je omogućavao deci da kreiraju multimedijalne projekte. Prvobitno je bila poznata kao KidSim, a sada je licencirana drugoj firmi kao Stagecast Creator. Program je prestao da se razvija u jednoj od racionalizacija koje su sprovedene nakon što se Stiv Džobs vratio u Apple. Ime je ponovo upotrebljeno kako bi se izbeglo odlaganje koje bi nastalo registrovanjem novog žiga (eng.~{\em trademark}), uz saglasnost Stagecast-a da reklamira stari Cocoa pod novim imenom.
 
 
 \subsection{GNUstep}
@@ -169,6 +188,7 @@ Korisničko okruženje Etoile \cite{etoile} koje je moguće koristiti na različ
   
 \section{Instalacija i uputstvo za pokretanje na Linux/Windows operativnim sistemima}
 \label{sec:instalacija}
+U ovoj sekciji biće navedena instalacija i sve što je za nju potrebno na Linux i Windows operativnim sistemima, kao i uputstva za pokretanje programa.
 \subsection{Instalacija na Linux operativnim sistemima}
 \subsubsection{Instalacija neophodnih paketa}
 Da bismo mogli da kompajliramo programe napisane u Objective-C, potrebno je prvo da instaliramo
@@ -179,12 +199,17 @@ Prvo što treba da uradimo je da instaliramo GCC podršku za Objective-C \cite{o
 \begin{lstlisting}[frame=single]
 $ sudo apt-get install gobjc
 \end{lstlisting}
-Zatim treba da instaliramo radno okruženje (eng.~{\em framework}) na kom se moderni Objective-C zasniva i bez kog ne bi imalo puno smisla raditi, iako je moguće.
+\caption{Listing 2: instalacija GCC podrške} \\
+
+
+Treba da instaliramo radno okruženje (eng.~{\em framework}) na kom se moderni Objective-C zasniva i bez kog ne bi imalo puno smisla raditi, iako je moguće.
 To okruženje se zove GNUstep \cite{gnustep} i instalira se komandama:
 \begin{lstlisting}[frame=single]
 $ sudo apt-get install gnustep
 $ sudo apt-get install gnustep-devel
 \end{lstlisting}
+\caption{Listing 3: instalacija GNUstep-a} \\
+
 \subsubsection{Kompajliranje}
 Svaki put kada pokrenemo novu sesiju, moramo da pokrenemo skript GNUstep.sh, da bismo mogli da kompajliramo Objective-C programe.
 \begin{lstlisting}[frame=single]
@@ -195,6 +220,7 @@ Da ne bismo svaki put morali da izvršavamo taj skript, možemo da uradimo slede
 \begin{lstlisting}[frame=single]
 $ echo /usr/share/GNUstep/Makefiles/GNUstep.sh >> ~/.bashrc
 \end{lstlisting}
+\caption{Listing 4: izvršavanje} \\
 
 Na taj način, svaki put kad se pokrene nova sesija, biće izvršen GNUstep.sh i nećemo morati da brinemo.
 
@@ -206,10 +232,13 @@ Dakle ako želimo da prevedemo hello.m program, moramo da izvršimo sledeće:
 \begin{lstlisting}[frame=single]
 $ gcc hello.m -o hello `gnustep-config --objc-flags` -lgnustep-base -lobjc
 \end{lstlisting}
+\caption{Listing 5: prevođenje programa} \\
+
 Izvršavanje programa se radi uobičajeno:
 \begin{lstlisting}[frame=single]
 $ ./hello
 \end{lstlisting}
+\caption{Listing 6: izvršavanje programa} \\
 
 \subsection{Instalacija na Windows operativnim sistemima}
 \subsubsection{Kompajliranje i izvršavanje}
@@ -219,45 +248,60 @@ Program ćemo kompajlirati sledećom naredbom:
 \begin{lstlisting}[frame=single]
 $ gcc `gnustep-config --objc-flags` -L /GNUstep/System/Library/Libraries hello.m -o hello -lgnustep-base -lobjc
 \end{lstlisting}
+\caption{Listing 7: kompilacija} \\
+
 A izvršavanje sa:
 \begin{lstlisting}[frame=single]
 ./hello.exe
 \end{lstlisting}
+\caption{Listing 8: izvršavanje programa} \\
+
 \section{Primer jednostavnog koda i njegovo objašnjenje}
 \label{sec:primer}
-Zatim, navedimo primer zanimljivog koda \cite{tutorijali} koji omogućava kategorije (eng.~{\em categories}). Kategorije su koncept jezika Objective-C koji omogućava korisnu funkcionalnost dodavanja metode klasi samo za određenu upotrebu. Dakle, koristeći kategorije, možemo dodati neku metodu u klasu, ali samo za svoju aplikaciju, tako da klasa zapravo ostane ista. Svaka metoda uvedena kroz kategoriju biće dostupna svim instancama te klase (u okviru aplikacije u kojoj je dodata, naravno), kao i instancama svih klasa koje je nasleđuju. Pri izvršavanju takvih metoda nema nikakve razlike u odnosu metode iz klase napravljene na tradicionalan način.
+Najpre navodimo primer dobgo poznatog programa ,,Zdravo, svete".
 
+\begin{lstlisting}
+#import <Foundation/Foundation.h>
+ 
+int main (int argc, const char * argv[])
+{
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        NSLog (@"Hello, World!");
+        [pool drain];
+        return 0;
+}
 
+\end{lstlisting}
+\caption{Listing 9: Zdravo, svete} \\
+
+Uključena je sistemska biblioteka Foundation.h, u kojoj se nalaze tipovi NSAutoreleasePool i funkcija NSLog. NSLog služi za ispisivanje poruke (tj. objekta) skladištene u promenljivoj tipa NSAutoreleasePool*. Na kraju programa komandom drain se šalje otpuštajući (engl. release) signal kojim se oslobađa memorija iz promenljive.
+
+Navedimo zatim primer zanimljivog koda \cite{tutorijali} koji omogućava kategorije (eng.~{\em categories}). Kategorije su koncept jezika Objective-C koji omogućava korisnu funkcionalnost dodavanja metode klasi samo za određenu upotrebu. Dakle, koristeći kategorije, možemo dodati neku metodu u klasu, ali samo za svoju aplikaciju, tako da klasa zapravo ostane ista. Svaka metoda uvedena kroz kategoriju biće dostupna svim instancama te klase (u okviru aplikacije u kojoj je dodata, naravno), kao i instancama svih klasa koje je nasleđuju. Pri izvršavanju takvih metoda nema nikakve razlike u odnosu metode iz klase napravljene na tradicionalan način.
 \begin{lstlisting}[frame=single]
 @interface NSString(MyAdditions)
 +(NSString *)getCopyRightString;
 @end
-
 @implementation NSString(MyAdditions)
-
 +(NSString *)getCopyRightString {
    return @"Zdravo";
 }
 @end
 \end{lstlisting}
+\caption{Listing 10: kategorije} \\
 
 Sintaksa kojom se najavljuje da će biti uvedena kategorija je ista kao i kad se deklariše klasa (interface, end, između definicija), sa dodatkom imena kategorije u zagradama:
-
 \begin{lstlisting}[frame=single]
 @interface ImeKlase (ImeKategorije)
-
 @end
 \end{lstlisting}
+\caption{Listing 11: deklarisanje kategorije} \\
 
 Tu se posle znaka + navodi (u zagradama) tip, a potom ime metode koja će biti dodata klasi, a zatim se ključnim rečima implementation i end najavljuje da između njih sledi definicija nečega, u ovom slučaju gorenavedene kategorije. Tu se znakom + najavljuje dodavanje metode, a posle njenog tipa i imena u vitičastim zagradama sledi kod. Ovde smo definisali jednu jednostavnu metodu koja vraća nisku ,,Zdravo''.
-
 \section{Zaključak}
 \label{sec:zakljucak}
 U ovom radu su opisane najvažnije osobine i koncepti jezika. Objective-C predstavlja osnovu operativnih sistema koji su u širokoj upotrebi i kao takav će i u budućnosti zauzimati zapaženo mesto u svetu informatike. Trajanje (skoro 40 godina) svedoči o kvalitetu jezika. Rad prestavlja podstrek za dalje istraživanje mogućnosti i funkcionalnosti jezika i njegovih okruženja.  
-
 \addcontentsline{toc}{section}{Literatura}
 \appendix
 \bibliography{09_ObjectiveC_BearaMileticMarjanovicAlicic} 
 \bibliographystyle{plain}
-
 \end{document}
